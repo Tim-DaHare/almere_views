@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, StyleSheet, Text, Image } from 'react-native'
 import mapIcon from '../../assets/img/map-icon.png'
+import eventsIcon from '../../assets/img/events-icon.png'
 
 const styles = StyleSheet.create({
     overviewContainer: {
@@ -52,6 +53,7 @@ const Overview = () => {
 
             </View>
             <View style={styles.navContainer}>
+                <NavIcon source={eventsIcon} />
                 <NavIcon source={mapIcon} />
             </View>
         </View>

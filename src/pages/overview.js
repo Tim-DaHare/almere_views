@@ -28,22 +28,29 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         alignItems: 'center'
     },
+    navIconContainer: {
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        backgroundColor: '#ffffff77', 
+        borderRadius: 100, 
+        height: 60, 
+        width: 60 
+    },
     navIcon: {
-        width: 50,
-        height: 50
+        width: 40,
+        height: 40
     }
 })
 
 const NavIcon = ({ source }) => {
     return (
-        <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff77', borderRadius: 100, height: 60, width: 60 }}>
-            <Image style={styles.navIcon} source={source}/>
+        <View style={styles.navIconContainer}>
+            <Image style={styles.navIcon} source={source} />
         </View>
     )
 }
 
 const Overview = () => {
-
     return (
         <View style={styles.overviewContainer}>
             <View style={styles.headerContainer}>

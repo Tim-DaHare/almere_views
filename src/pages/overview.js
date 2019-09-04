@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, StyleSheet, Text, Image } from 'react-native'
+import MapView from 'react-native-maps'
 import mapIcon from '../../assets/img/map-icon.png'
 import eventsIcon from '../../assets/img/events-icon.png'
 
@@ -30,8 +31,7 @@ const styles = StyleSheet.create({
     },
     navIconContainer: {
         justifyContent: 'center', 
-        alignItems: 'center', 
-        backgroundColor: '#ffffff77', 
+        alignItems: 'center',
         borderRadius: 100, 
         height: 60, 
         width: 60 
@@ -42,9 +42,9 @@ const styles = StyleSheet.create({
     }
 })
 
-const NavIcon = ({ source }) => {
+const NavIcon = ({ source, isSelected }) => {
     return (
-        <View style={styles.navIconContainer}>
+        <View style={[styles.navIconContainer, { backgroundColor: isSelected ? '#ffffff77' : 'transparant'}]}>
             <Image style={styles.navIcon} source={source} />
         </View>
     )
@@ -57,11 +57,19 @@ const Overview = () => {
                 <Text style={styles.headerText}>Almere Views</Text>
             </View>
             <View style={styles.mapContainer}>
-
+            <MapView
+                style={{ flex: 1 }}
+                initialRegion={{
+                    latitude: 37.78825,
+                    longitude: -122.4324,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421,
+                }}
+            />
             </View>
             <View style={styles.navContainer}>
                 <NavIcon source={eventsIcon} />
-                <NavIcon source={mapIcon} />
+                <NavIcon source={mapIcon} isSelected />
             </View>
         </View>
     )

@@ -1,11 +1,8 @@
-import React from 'react';
+import React from 'react'
+import Overview from './src/pages/overview'
 
-const App = () => {
-    return (
-        <React.Fragment>
+const App = () => (
+    <Overview />
+)
 
-        </React.Fragment>
-    )
-}
-
-export default App;
+export default App
